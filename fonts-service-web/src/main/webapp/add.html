@@ -1,25 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Czcionki</title>
+        <title>Dodaj czcionkę</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-        <script>
-            $(window).on("load", function () {
-                $("#header").load("header.html");
-                $.get("IndexServlet", function (responseJson) {
-                    $.each(responseJson, function (index, font) {
-                        $("<tr>").appendTo($("#fonts-table"))
-                                .append($("<td>" + font.name + "<a class=\"ml-5 btn btn-dark\" href='preview.html?id=" + font.id + "'><i class=\"fa fa-search\"></i> Podgląd</a>"));
-                    });
-                });
-            });
-        </script>
     </head>
     <body>
         <div>
@@ -49,17 +37,37 @@
             </nav>
         </div>
 
-        <div class="table-responsive-lg text-center">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Czcionki</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="fonts-table">
-                </tbody>
-            </table>
+        <div class="container mt-5">
+            <form action="AddServlet" enctype="multipart/form-data" method="post">
+                <label for="nameInput">Nazwa</label>
+                <input class="form-control mb-4" id="nameInput" maxlength="255" name="name" onkeyup="success()" type="text">
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Plik</span>
+                    </div>
+                    <div class="custom-file">  <input accept="font/ttf" aria-describedby="inputGroupFileAddon01" class="custom-file-input"
+                                                      id="inputGroupFile01" name="file" onchange="success()" type="file">
+                        <label class="custom-file-label" for="inputGroupFile01">Wybierz plik</label>
+                    </div>
+                </div>
+                <button class="btn btn-dark" disabled id="submit" type="submit" style="float: right"><i class="fa fa-upload"></i> Dodaj</button>
+            </form>
         </div>
+
+        <script type="text/javascript">
+            function success() {
+                if (document.getElementById('nameInput').value === ''
+                        || document.getElementById('inputGroupFile01').value === '') {
+                    document.getElementById('submit').disabled = true;
+                } else {
+                    document.getElementById('submit').disabled = false;
+                }
+            }
+
+            $('#inputGroupFile01').on('change', function () {
+                const fileName = $(this).val();
+                $(this).next('.custom-file-label').html(fileName);
+            })
+        </script>
     </body>
 </html>
