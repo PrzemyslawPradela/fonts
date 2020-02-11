@@ -11,7 +11,6 @@
 
         <script>
             $(window).on("load", function () {
-                $("#header").load("header.html");
                 $.get("IndexServlet", function (responseJson) {
                     $.each(responseJson, function (index, font) {
                         $("<tr>").appendTo($("#fonts-table"))
