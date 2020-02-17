@@ -59,7 +59,6 @@ public class PreviewServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String sid = request.getParameter("id");
-        response.getWriter().write(sid);
         int id = Integer.parseInt(sid);
         String name = request.getParameter("name");
         Part filePart = request.getPart("file");
