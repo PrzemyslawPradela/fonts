@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ejb.fonts/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="FontService" targetNamespace="http://ejb.fonts/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ejb.fonts/" elementFormDefault="unqualified" targetNamespace="http://ejb.fonts/" version="1.0">
+
+  <xs:element name="addFont" type="tns:addFont"/>
+
+  <xs:element name="deleteFont" type="tns:deleteFont"/>
+
+  <xs:element name="font" type="tns:font"/>
+
+  <xs:element name="getFont" type="tns:getFont"/>
+
+  <xs:element name="getFontResponse" type="tns:getFontResponse"/>
+
+  <xs:element name="getFonts" type="tns:getFonts"/>
+
+  <xs:element name="getFontsResponse" type="tns:getFontsResponse"/>
+
+  <xs:element name="updateFont" type="tns:updateFont"/>
+
+  <xs:complexType name="updateFont">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="font" type="tns:font"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="font">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="base64File" type="xs:string"/>
+      <xs:element minOccurs="0" name="file" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteFont">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getFont">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getFontResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:font"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addFont">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="font" type="tns:font"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getFonts">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getFontsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:font"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addFont">
+    <wsdl:part element="tns:addFont" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFontResponse">
+    <wsdl:part element="tns:getFontResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFonts">
+    <wsdl:part element="tns:getFonts" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateFont">
+    <wsdl:part element="tns:updateFont" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteFont">
+    <wsdl:part element="tns:deleteFont" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFont">
+    <wsdl:part element="tns:getFont" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFontsResponse">
+    <wsdl:part element="tns:getFontsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="FontBean">
+    <wsdl:operation name="updateFont">
+      <wsdl:input message="tns:updateFont" name="updateFont">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFont">
+      <wsdl:input message="tns:deleteFont" name="deleteFont">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getFont">
+      <wsdl:input message="tns:getFont" name="getFont">
+    </wsdl:input>
+      <wsdl:output message="tns:getFontResponse" name="getFontResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addFont">
+      <wsdl:input message="tns:addFont" name="addFont">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getFonts">
+      <wsdl:input message="tns:getFonts" name="getFonts">
+    </wsdl:input>
+      <wsdl:output message="tns:getFontsResponse" name="getFontsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FontServiceSoapBinding" type="tns:FontBean">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="updateFont">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateFont">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFont">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteFont">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getFont">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getFont">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFontResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addFont">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addFont">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getFonts">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getFonts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFontsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FontService">
+    <wsdl:port binding="tns:FontServiceSoapBinding" name="FontBeanPort">
+      <soap:address location="http://localhost:8080/fonts-ejb-1.0-SNAPSHOT/FontService/FontBean"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
