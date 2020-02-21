@@ -10,6 +10,7 @@ Service with TTF fonts
 Project is created with:
 * Java EE version: 8
 * JPA version: 2.1
+* EJB version: 3.0
 * Hibernate version: 5.4.12
 * Gson vesrion: 2.8.6
 * Apache Commons IO version: 2.2
