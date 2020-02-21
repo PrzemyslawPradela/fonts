@@ -29,7 +29,7 @@ Project is created with:
 5. [Add WideFly Application Server to NetBeans](http://www.mastertheboss.com/eclipse/jboss-netbeans/configuring-netbeans-with-wildfly)
 6. Clone this repository
 7. Download Apache Derby 10.14.2 (lib package) and [configure JavaDB in NetBeans](https://web.csulb.edu/~mopkins/cecs323/netbeans.shtml)  
-*in Database Location*: **_../fonts/derby_**
+in *Database Location*: **_../fonts/derby_**
 8. Open *fonts* (select option *Open Required Projects*) in NetBeans
 9. Build *fonts*
 10. Deploy *fonts-ear*
