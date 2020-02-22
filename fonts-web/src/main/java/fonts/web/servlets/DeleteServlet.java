@@ -1,20 +1,19 @@
 package fonts.web.servlets;
 
-import fonts.web.FontBean;
-import fonts.web.FontService;
+import fonts.ejb.FontServiceBean;
 import java.io.IOException;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.ws.WebServiceRef;
 
 @WebServlet(name = "DeleteServlet", urlPatterns = {"/DeleteServlet"})
 public class DeleteServlet extends HttpServlet {
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/fonts-ejb-1.0-SNAPSHOT/FontService/FontBean.wsdl")
-    private FontService service;
+    @EJB
+    private FontServiceBean fontServiceBean;
 
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -27,16 +26,10 @@ public class DeleteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try { // Call Web Service Operation
-            FontBean port = service.getFontBeanPort();
-            String idString = request.getParameter("id");
-            int id = Integer.parseInt(idString);
-            port.deleteFont(id);
-            response.sendRedirect("index.html");
-        } catch (Exception ex) {
-            response.setContentType("text/html;charset=UTF-8");
-            response.getWriter().println(ex.getMessage());
-        }
+        String idString = request.getParameter("id");
+        int id = Integer.parseInt(idString);
+        fontServiceBean.deleteFont(id);
+        response.sendRedirect("index.html");
     }
 
     /**

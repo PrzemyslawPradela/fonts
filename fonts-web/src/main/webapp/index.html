@@ -12,6 +12,11 @@
         <header></header>
         <div class="table-responsive-lg container">
             <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Czcionka</th>
+                        <th scope="col"></th>
+                    </tr>
                 <tbody id="fonts-table">
                 </tbody>
             </table>
@@ -28,8 +33,8 @@
             $.getJSON("IndexServlet", function (responseJson) {
                 $.each(responseJson, function (index, font) {
                     $("<tr>").appendTo($("#fonts-table"))
-                            .append($("<td style='width: 20%'>").text(font.name))
-                            .append($("<td style='width: 15%'><a class=\"ml-5 btn btn-dark\" href='preview.html?id=" + font.id + "'><i class=\"fa fa-search\"></i> Podgląd</a>"));
+                            .append($("<td>").text(font.name))
+                            .append($("<td><a class=\"ml-5 btn btn-dark\" href='preview.html?id=" + font.id + "'><i class=\"fa fa-search\"></i> Podgląd</a>"));
                 });
             });
         </script>

@@ -1,11 +1,9 @@
-package fonts.ejb;
+package fonts.ws;
 
-import fonts.ejb.entities.Font;
+import fonts.ws.entities.Font;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
 import javax.jws.Oneway;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -14,10 +12,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-@Stateless
-@LocalBean
 @WebService(serviceName = "FontService")
-public class FontBean {
+public class FontWebService {
 
     /**
      * Web service operation

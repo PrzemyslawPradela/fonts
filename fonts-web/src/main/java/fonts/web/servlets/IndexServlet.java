@@ -1,23 +1,22 @@
 package fonts.web.servlets;
 
 import com.google.gson.Gson;
-import fonts.web.Font;
-import fonts.web.FontBean;
-import fonts.web.FontService;
+import fonts.ejb.FontServiceBean;
+import fonts.ws.client.Font;
 import java.io.IOException;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.ws.WebServiceRef;
 
 @WebServlet(name = "IndexServlet", urlPatterns = {"/IndexServlet"})
 public class IndexServlet extends HttpServlet {
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/fonts-ejb-1.0-SNAPSHOT/FontService/FontBean.wsdl")
-    private FontService service;
+    @EJB
+    private FontServiceBean fontServiceBean;
 
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -30,17 +29,10 @@ public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try { // Call Web Service Operation
-            FontBean port = service.getFontBeanPort();
-            List<Font> result = port.getFonts();
-            String jsonString = new Gson().toJson(result);
-            response.setContentType("application/json;charset=UTF-8");
-            response.getWriter().println(jsonString);
-        } catch (Exception ex) {
-            response.setContentType("text/html;charset=UTF-8");
-            response.getWriter().println(ex.getMessage());
-        }
-
+        List<Font> fonts = fontServiceBean.getFonts();
+        String jsonString = new Gson().toJson(fonts);
+        response.setContentType("application/json;charset=UTF-8");
+        response.getWriter().println(jsonString);
     }
 
     /**

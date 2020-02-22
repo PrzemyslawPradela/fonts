@@ -9,5 +9,6 @@
 <modules>  <module>fonts-ear</module>
     <module>fonts-web</module>
     <module>fonts-ejb</module>
+    <module>fonts-ws</module>
   </modules>
 </project>

@@ -1,4 +1,4 @@
-package fonts.ejb.entities;
+package fonts.ws.entities;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -111,7 +111,7 @@ public class Font implements Serializable {
 
     @Override
     public String toString() {
-        return "fonts.ejb.entities.Font[ id=" + id + " ]";
+        return "fonts.ws.entities.Font[ id=" + id + " ]";
     }
 
 }
