@@ -9,8 +9,8 @@ Service with TTF fonts
 ## Technologies
 Project is created with:
 * Java EE version: 8
-* JPA version: 2.1
 * EJB version: 3.1
+* JPA version: 2.1
 * Hibernate version: 5.4.12
 * Gson vesrion: 2.8.6
 * Apache Commons IO version: 2.2
@@ -20,7 +20,7 @@ Project is created with:
 * Bootstrap version: 4.3.1
 * Font Awesome version: 5.12.1
 * Payara Server version: 5.193
-* Apache NetBeans version: 8.2
+* NetBeans version: 8.2
 
 ## Setup
 1. Install Java 8 Development Kit
