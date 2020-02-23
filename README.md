@@ -20,11 +20,11 @@ Project is created with:
 * Bootstrap version: 4.3.1
 * Font Awesome version: 5.12.1
 * Payara Server version: 5.193
-* NetBeans version: 8.2
+* Apache NetBeans version: 11.2
 
 ## Setup
 1. Install Java 8 Development Kit
-2. Download and install Apache NetBeans 8.2
+2. Download and install Apache NetBeans 11.2
 3. [Add Payara Server to NetBeans](https://blog.payara.fish/adding-payara-server-to-netbeans)
 4. Clone this repository
 5. [Configure JavaDB in NetBeans](https://web.csulb.edu/~mopkins/cecs323/netbeans.shtml)  
