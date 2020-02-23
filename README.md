@@ -30,7 +30,8 @@ Project is created with:
 5. [Configure JavaDB in NetBeans](https://web.csulb.edu/~mopkins/cecs323/netbeans.shtml)  
 in *Java DB Installation*: **_Payara_Server_location\javadb_**  
 in *Database Location*: **_..\fonts\derby_**
-6. Open *fonts* (select option *Open Required Projects*) in NetBeans
-7. Build *fonts*
-8. Deploy *fonts-ear*
-9. Open *fonts-web* in a web browser on *http://localhost:8080/fonts-web/*
+6. Start Java DB server
+7. Open *fonts* (select option *Open Required Projects*) in NetBeans
+8. Build *fonts*
+9. Deploy *fonts-ear*
+10. Open *fonts-web* in a web browser on *http://localhost:8080/fonts-web/*
