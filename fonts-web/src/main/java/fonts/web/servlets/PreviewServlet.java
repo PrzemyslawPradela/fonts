@@ -5,7 +5,6 @@ import fonts.ejb.FontServiceBean;
 import fonts.ws.client.Font;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -65,10 +64,8 @@ public class PreviewServlet extends HttpServlet {
         } else if (filePart != null) {
             InputStream fileContent = filePart.getInputStream();
             byte[] file = IOUtils.toByteArray(fileContent);
-            if (Arrays.equals(file, font.getFile())) {
-                font.setFile(file);
-                fontServiceBean.updateFont(font);
-            }
+            font.setFile(file);
+            fontServiceBean.updateFont(font);
         }
         response.sendRedirect("preview.html?id=" + id);
     }
