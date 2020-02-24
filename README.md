@@ -17,7 +17,7 @@ Project is created with:
 * Apache Derby version: 10.14.2
 * Maven version: 3.6.3
 * jQuery version: 3.4.1
-* Bootstrap version: 4.3.1
+* Bootstrap version: 4.4.1
 * Font Awesome version: 5.12.1
 * Payara Server version: 5.193
 * Apache NetBeans version: 11.2
