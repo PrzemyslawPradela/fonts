@@ -24,4 +24,4 @@ hs_err_pid*
 /fonts-ejb/target/
 /fonts-ear/target/
 /fonts-web/target/
-/fonts-ws/target/
+/fonts-soap/target/
