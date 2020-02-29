@@ -1,7 +1,7 @@
 package fonts.web.servlets;
 
 import fonts.ejb.FontServiceBean;
-import fonts.ws.client.Font;
+import fonts.ejb.soap.client.Font;
 import java.io.IOException;
 import java.io.InputStream;
 import javax.ejb.EJB;

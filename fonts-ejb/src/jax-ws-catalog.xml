@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/fonts-ws/FontService?wsdl" uri="wsdl/localhost_8080/fonts-ws/FontService.wsdl"/>
     <system systemId="http://localhost:8080/fonts-ws/FontService?xsd=1" uri="wsdl/localhost_8080/fonts-ws/FontService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/fonts-soap/FontService?wsdl" uri="wsdl/localhost_8080/fonts-soap/FontService.wsdl"/>
+    <system systemId="http://localhost:8080/fonts-soap/FontService?xsd=1" uri="wsdl/localhost_8080/fonts-soap/FontService.xsd_1.xsd"/>
 </catalog>

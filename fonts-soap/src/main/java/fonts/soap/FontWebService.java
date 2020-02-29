@@ -1,6 +1,6 @@
-package fonts.ws;
+package fonts.soap;
 
-import fonts.ws.entities.Font;
+import fonts.soap.entities.Font;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;

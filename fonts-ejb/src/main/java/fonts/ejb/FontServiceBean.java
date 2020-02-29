@@ -1,8 +1,8 @@
 package fonts.ejb;
 
-import fonts.ws.client.Font;
-import fonts.ws.client.FontService;
-import fonts.ws.client.FontWebService;
+import fonts.ejb.soap.client.Font;
+import fonts.ejb.soap.client.FontService;
+import fonts.ejb.soap.client.FontWebService;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -12,7 +12,7 @@ import javax.xml.ws.WebServiceRef;
 @LocalBean
 public class FontServiceBean {
 
-    @WebServiceRef(wsdlLocation = "http://localhost:8080/fonts-ws/FontService?wsdl")
+    @WebServiceRef(wsdlLocation = "http://localhost:8080/fonts-soap/FontService?wsdl")
     private FontService service;
 
     public void addFont(Font font) {

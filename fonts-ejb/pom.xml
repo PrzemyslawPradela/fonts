@@ -99,13 +99,13 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>localhost_8080/fonts-ws/FontService.wsdl</wsdlFile>
+                                <wsdlFile>localhost_8080/fonts-soap/FontService.wsdl</wsdlFile>
                             </wsdlFiles>
-                            <packageName>fonts.ws.client</packageName>
+                            <packageName>fonts.ejb.soap.client</packageName>
                             <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>
-                            <wsdlLocation>http://localhost:8080/fonts-ws/FontService?wsdl</wsdlLocation>
+                            <wsdlLocation>http://localhost:8080/fonts-soap/FontService?wsdl</wsdlLocation>
                             <staleFile>${project.build.directory}/jaxws/stale/FontService.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-FontService</id>

@@ -1,4 +1,4 @@
-package fonts.ws.entities;
+package fonts.soap.entities;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
